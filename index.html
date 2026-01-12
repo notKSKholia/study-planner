@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner & Exam Buddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI Study Planner</h1>
+            <p>Your intelligent exam companion</p>
+        </header>
+
+        <main>
+            <section id="setup-section">
+                <h2>Setup Your Plan</h2>
+                <div class="input-group">
+                    <label>Syllabus (Topics/Subjects)</label>
+                    <textarea id="syllabus-input" placeholder="e.g., Math: Calculus, Physics: Optics..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Daily Study Hours</label>
+                    <input type="number" id="hours-input" placeholder="e.g., 4" min="1" max="24">
+                </div>
+                <div class="input-group">
+                    <label>Weak Subjects (Prioritized)</label>
+                    <input type="text" id="weak-subjects-input" placeholder="e.g., Physics">
+                </div>
+                <button id="generate-btn">Generate Plan</button>
+                <div id="loading" class="hidden">Generating your personalized plan... ⏳</div>
+            </section>
+
+            <section id="planner-section" class="hidden">
+                <h2>Your Schedule</h2>
+                <div id="schedule-container"></div>
+            </section>
+        </main>
+
+        <div id="chat-widget">
+            <div id="chat-header">Exam Buddy 🤖</div>
+            <div id="chat-messages"></div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Ask a doubt...">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
