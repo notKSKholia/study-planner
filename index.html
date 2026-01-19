@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart To-Do | Organise Your Life</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-layer-group"></i>
+                <h1>Smart To-Do</h1>
+            </div>
+            <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark Mode">
+                <i class="fa-regular fa-moon"></i>
+            </button>
+        </header>
+
+        <section class="notification-banner hidden" id="notification-banner">
+            <p><i class="fa-solid fa-bell"></i> Enable notifications for reminders</p>
+            <button id="enable-notifications" class="btn-small">Enable</button>
+        </section>
+
+        <main>
+            <div class="input-card glass-panel">
+                <h2>New Task</h2>
+                <div class="input-group">
+                    <input type="text" id="task-title" placeholder="What needs to be done?" autocomplete="off">
+                </div>
+                <div class="options-row">
+                    <div class="select-wrapper">
+                        <select id="task-priority">
+                            <option value="low">Low Priority</option>
+                            <option value="medium">Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="date-wrapper">
+                        <input type="datetime-local" id="task-deadline">
+                    </div>
+                </div>
+                <button id="add-task-btn" class="btn-primary">
+                    <i class="fa-solid fa-plus"></i> Add Task
+                </button>
+            </div>
+
+            <div class="tasks-section">
+                <div class="filter-bar">
+                    <span class="filter-label">Tasks</span>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                </div>
+                
+                <div id="task-list" class="task-list">
+                    <!-- Tasks will be injected here -->
+                    <div class="empty-state">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                        <p>No tasks yet. Add one to get started!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
